@@ -130,7 +130,7 @@ public class HelicopterForm implements MouseListener
         bottomrecs = new ArrayList<MovingImage>();
         smoke = new ArrayList<MovingImage>();
 
-        helicopter = new MovingImage("helicopter.GIF",XPOS,270);
+        helicopter = new MovingImage("helicopter.gif",XPOS,270);
 
         for(int x = 0; x < NUMRECS; x++)
             toprecs.add(new MovingImage("rec2.JPG",RECWIDTH*x,30));
@@ -183,15 +183,15 @@ public class HelicopterForm implements MouseListener
                 if (firstUpdates < numSmoke)
                 {
                     firstUpdates++;
-                    smoke.add(new MovingImage("smoke.GIF",187,helicopter.getY()));
+                    smoke.add(new MovingImage("smoke.gif",187,helicopter.getY()));
                     for(int x = 0; x < firstUpdates; x++)
-                        smoke.set(x,new MovingImage("smoke.GIF",smoke.get(x).getX() - 12, smoke.get(x).getY()));
+                        smoke.set(x,new MovingImage("smoke.gif",smoke.get(x).getX() - 12, smoke.get(x).getY()));
                 }
                 else
                 {
                     for(int x = 0; x < numSmoke - 1; x++)
                         smoke.get(x).setY(smoke.get(x+1).getY());
-                    smoke.set(numSmoke - 1,new MovingImage("smoke.GIF",187,helicopter.getY()));
+                    smoke.set(numSmoke - 1,new MovingImage("smoke.gif",187,helicopter.getY()));
                 }
                     }
                     back.updateImages(toprecs,middlerecs,bottomrecs,helicopter,smoke);
@@ -332,7 +332,7 @@ public class HelicopterForm implements MouseListener
                 helicopter.setPosition(XPOS,(double)(helicopter.getY() + upCount));
             else
                 helicopter.setPosition(XPOS,(double)(helicopter.getY() + (1.2 + upCount)));
-            helicopter.setImage("helicopter.GIF");
+            helicopter.setImage("helicopter.gif");
         }
         if(isHit())
             crash();
